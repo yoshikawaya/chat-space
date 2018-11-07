@@ -1,0 +1,51 @@
+.wrapper
+  .notification
+    .notice グループ作成成功
+
+  .chat-side
+    .chat-side__header
+      .user-info
+        %p.user-info__name ryosukemaehira
+        %ul.edit
+          %li.edit__create-group create-group
+          %li.edit__user edit-user
+    .chat-side__group
+      .group-info
+        %a
+          %p.group__name 神
+          %p.group__message sdkField
+        %a
+          %p.group__name aeaaaaaaa
+          %p.group__message まだメッセージはありません。
+        %a
+          %p.group__name sampleグループ
+          %p.group__message まだメッセージはありません。
+
+  .chat-main
+    .chat-main__header
+      .header__left
+        %p.current-group__name sampleグループ
+        %p.current-group__menbers ryosukemaehira
+      .header__right
+        %a.header_right__edit edit
+    .chat-main__body
+      .message
+        .message-top
+          %p.message-top__name ryosukemaehara
+          %p.message-top__date 2018/11/7 19:44:54
+        .message-bottom
+          %p.message-bottpm__content 水魚きもい
+      .message
+        .message-top
+          %p.message-top__name ryosukemaehara
+          %p.message-top__date 2018/11/7 19:50:25
+        .message-bottom
+          %p.message-bottpm__content command Enterで送信したい感ある
+    .chat-main__footer
+      %form
+        .input-box
+          %input{type: "text_field"}
+            %label{for: "image-file"}
+              %i aaa
+              %input{type: "file", id: "image-file"}
+          %input{type: "submit"}
