@@ -1,13 +1,3 @@
-.notification{
-  background-color: $light_blue;
-  width: 100%;
-  height: 28px;
-  .notice {
-    color: #fff;
-    text-align: center;
-  }
-}
-
 .chat--contents {
   width: calc(100vw - 300px);
   float: left;
