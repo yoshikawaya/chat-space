@@ -4,26 +4,19 @@
       = current_user.name
     %ul.header__user-info
       %li.list
-        = link_to edit_user_path(current_user) do
-          // font-awesomeのhelperメドッドを呼び出して鉛筆マーク作成
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
         = link_to new_group_path do
           // font-awesomeのhelperメドッドを呼び出して歯車マーク作成
+          = fa_icon 'pencil-square-o', class: 'icon'
+      %li.list
+        = link_to edit_user_path(current_user) do
+          // font-awesomeのhelperメドッドを呼び出して鉛筆マーク作成
           = fa_icon 'cog', class: 'icon'
+
   .groups
-    .group
-      .group__name
-        神
-      .group__message
-        sdkField
-    .group
-      .group__name
-        aaaaaaaaaa
-      .group__message
-        まだメッセージはありません。
-    .group
-      .group__name
-        sampleグループ
-      .group__message
-        まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
