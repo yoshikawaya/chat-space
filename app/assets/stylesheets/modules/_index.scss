@@ -84,6 +84,9 @@
         font-size: 20px;
         line-height: 50px;
       }
+      .hidden {
+        display: none;
+      }
     }
     &__send {
       background-color: $light_blue;
