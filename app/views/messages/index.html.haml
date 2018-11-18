@@ -1,26 +1,29 @@
+.wrapper
 = render "shared/side_bar"
 
-.chat--contents
-  .header
-    .left-header
-      .left-header__title
+.chat
+  .chat-header
+    .header-left
+      %p.current-group-name
         = @group.name
-      %ul.left-header__members
-        Member：
-        %li.member
+      %p.current-group-members
+        Members:
         - @group.users.each do |user|
           = user.name
-    .right-header
-      .right-header__button
+    .header-right
+      %a.header-right__edit
         Edit
-  .messages
-    = render @messages
 
-  .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__file
-        = f.label :image, class: 'form__file__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__send'
+
+    .chat-body
+      = render @messages
+
+    .chat-footer
+      .form
+        = form_for [@group, @message], html: {id: "new_message"} do |f|
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: "type a message"
+            = f.label :image, class: 'input-box__image' do
+              = fa_icon("image")
+              = f.file_field :image, class: "input-box__file"
+          = f.submit 'Send', class: 'form__send-btn'

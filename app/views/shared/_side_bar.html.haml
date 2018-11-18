@@ -1,22 +1,21 @@
-.chat--side
-  .header
-    .header__user-name
-      = current_user.name
-    %ul.header__user-info
-      %li.list
-        = link_to new_group_path do
-          // font-awesomeのhelperメドッドを呼び出して歯車マーク作成
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
-        = link_to edit_user_path(current_user) do
-          // font-awesomeのhelperメドッドを呼び出して鉛筆マーク作成
-          = fa_icon 'cog', class: 'icon'
+.side-bar
+  .side-bar-header
+    .user-info
+      %p.user-info__name
+        = current_user.name
+      %ul.edit
+        %li.edit__user
+          = link_to edit_user_path(current_user), class: "link-color" do
+            = fa_icon("gear")
+        %li.edit__create-group
+          = link_to new_group_path(current_user), class: "link-color" do
+            = fa_icon("edit")
 
-  .groups
-    - current_user.groups.each do |group|
-      .group
-        = link_to group_messages_path(group) do
-          .group__name
+  .side-bar-groups
+    .group-info
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group), class: "link-color" do
+          .group-info__name
             = group.name
-          .group__message
+          .group-info__message
             = group.show_last_message
