@@ -1,0 +1,36 @@
+.chat{
+  .chat-footer{
+    @include div_basic(calc(100vw - 300px), 90px, #B8C3C7);
+    padding: 20px $chat-width-space;
+    text-align: center;
+
+    .form{
+      .input-box {
+        @include div_basic(calc(100% - #{$send-btn-width} - 15px), 50px);
+        @include font_basic($dark-gray, 16px, null, null, null);
+        position: relative;
+        float: left;
+        &__text {
+          @include div_basic(100%, 50px, #fff);
+          float: left;
+          padding-left: 10px;
+          border-style: none;
+        }
+        &__image {
+          @include absolute(null, 10px, null, null);
+          line-height: 50px;
+        }
+        &__file {
+          display: none;
+        }
+      }
+      .form__send-btn {
+        @include div_basic($send-btn-width, $send-btn-height, $light-blue);
+        @include font_basic(#fff, 16px, null, 50px, center);
+        float: right;
+        border-style: none;
+      }
+    }
+  }
+}
+
