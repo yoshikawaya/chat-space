@@ -12,7 +12,7 @@
           = user.name
     .header-right
       %a.header-right__edit
-        Edit
+        = link_to "Edit", edit_group_path(@group.id), class: "header-right__edit--btn"
 
 
     .chat-body

@@ -1,7 +1,7 @@
 .chat{
 
   .chat-body{
-    @include div_basic(calc(100vw - 300px), calc(100vh - 100px - 90px), #AAAAAA);
+    @include div_basic(calc(100vw - 300px), calc(100vh - 100px - 90px), #fff);
     padding: 0 $chat-width-space;
     overflow: scroll;
     padding-top: 46px;
