@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    region: 'sap-northeast-1'
+    region: 'ap-northeast-1'
   }
 
   config.fog_directory  = 'ploadphoto-chatspace'
-  config.asset_host = 'https://sap-northeast-1.amazonaws.com/uploadphoto-chatspace'
+  config.asset_host = 'https://ap-northeast-1.amazonaws.com/uploadphoto-chatspace'
 end
