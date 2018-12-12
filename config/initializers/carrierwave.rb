@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'ploadphoto-chatspace'
+  config.fog_directory  = 'uploadphoto-chatspace'
   config.asset_host = 'https://ap-northeast-1.amazonaws.com/uploadphoto-chatspace'
 end
